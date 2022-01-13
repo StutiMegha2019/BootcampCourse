@@ -1,0 +1,28 @@
+<%-include("header") -%>
+
+    <!-- tag in java script  -->
+
+    <!-- <% if (kindOfDay === "Saturday" || kindOfDay ==="Sunday"){ %>
+    <h1 style="color:red"><%= kindOfDay %> ToDo List</h1>
+    <%} else {%>
+        <h1 style="color:purple">It's a <%= kindOfDay %> ToDo List!</h1>
+    <% }%>  -->
+    <div class="box" id="heading">
+        <h1>
+            <%= kindOfDay %>
+        </h1>
+    </div>
+    <div class="box">
+            <% for(var i=0; i<newListItems.length; i++){ %>
+             <div class="item">
+                 <input type="checkbox">
+              <p> <%=newListItems[i] %> </p>
+             </div>  
+               <% } %>
+                <form class="item"action="/" method="post">
+                    <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+                    <BUtton type="submit" name="list" value="<%= kindOfDay %>">+</BUtton>
+                </form>
+    </div>
+
+   <%- include("footer") -%>
